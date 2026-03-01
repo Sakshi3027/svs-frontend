@@ -132,12 +132,13 @@ export default function AnalyticsPage() {
                     cy="50%"
                     outerRadius={80}
                     dataKey="value"
-                    label={({ name, percent }: { name: string, percent?: number }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}
+                    label={false}
                   >
                     {statusData.map((_, index) => (
                       <Cell key={index} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
+                  <Legend wrapperStyle={{ color: "#8b949e" }} />
                   <Tooltip
                     contentStyle={{ backgroundColor: "#161b22", border: "1px solid #30363d", borderRadius: "8px" }}
                     labelStyle={{ color: "#fafafa" }}
